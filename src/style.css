@@ -5,3 +5,7 @@ h1 {
 .beard {
     border: 1px solid blue;
 }
+
+label {
+    display: block;
+}
