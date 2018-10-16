@@ -8,10 +8,27 @@ export class Store {
     @observable
     auth: { user: Object; jwt: string } | null = null
 
+    @observable
+    beards: any = []
+
     @action
     setPage = (page: string) => {
         this.page = page
         console.log('this.page=', this.page)
+    }
+
+    @action
+    fetchBeards() {
+        if (this.auth == null) return console.warn('not connected')
+        ajax({
+            type: 'GET',
+            url: `http://${window.location.hostname}:1337/beards`,
+            headers: { Authorization: `Bearer ${this.auth.jwt}` },
+            done: beards => {
+                console.log('beard fetch success:', { beards })
+                this.beards = beards
+            }
+        })
     }
 
     @action
