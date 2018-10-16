@@ -1,0 +1,5 @@
+db
+strapi-app
+node_modules
+.cache
+dist
