@@ -1,5 +1,5 @@
 h1 {
-    color: green;
+    color: red;
 }
 
 .beard {
@@ -8,4 +8,47 @@ h1 {
 
 label {
     display: block;
+}
+
+html,
+body,
+#root,
+.layout {
+    height: 100%;
+}
+.layout {
+    display: flex;
+    flex-direction: column;
+}
+.layout .contentPane {
+    flex-grow: 1;
+    position: relative;
+    overflow: auto;
+}
+.layout .contentPane .contentWrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.layout .menuPane {
+    display: flex;
+    flex-grow: 0;
+}
+.layout .menuPane button {
+    flex-grow: 1;
+}
+.menuPane button {
+    height: 48px;
+}
+
+.beardCard {
+    margin: 12px;
+    border: 1px solid black;
+    box-shadow: 0 8px 23px 4px grey;
+}
+.beardCard img {
+    height: 100px;
+    width: 100px;
 }

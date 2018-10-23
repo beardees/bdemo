@@ -4,30 +4,35 @@ import { observer } from 'mobx-react'
 
 import { store } from './store'
 
-import { Page2 } from './page2'
-import { Page1 } from './page1'
-import { Page3 } from './page3'
+import { Feed } from './pages/feed'
+import { MyProfile } from './pages/myProfile'
+import { Profile } from './pages/Profile'
 
 @observer
 class App extends React.Component {
     render() {
+        const page = store.page
         let pageContent = null
-        if (store.page === 'page1') {
-            pageContent = <Page1 />
-        } else if (store.page === 'page2') {
-            pageContent = <Page2 />
-        } else if (store.page === 'page3') {
-            pageContent = <Page3 />
+        if (page.name === 'myProfile') {
+            pageContent = <MyProfile />
+        } else if (page.name === 'feed') {
+            pageContent = <Feed />
+        } else if (page.name === 'profile') {
+            pageContent = <Profile userId={page.userId} />
         }
 
         return (
-            <div>
-                <div className="menu">
-                    <button onClick={() => store.setPage('page1')}>Page1</button>
-                    <button onClick={() => store.setPage('page2')}>Page2</button>
-                    <button onClick={() => store.setPage('page3')}>Page3</button>
+            <div className="layout">
+                <div className="contentPane">
+                    <div className="contentWrapper">{pageContent}</div>
                 </div>
-                {pageContent}
+                <div className="menuPane">
+                    <button onClick={() => store.goToPage({ name: 'myProfile' })}>
+                        My profile
+                    </button>
+                    <button onClick={() => store.goToPage({ name: 'feed' })}>Feed</button>
+                    <button onClick={() => store.goToPage({ name: 'map' })}>Map</button>
+                </div>
             </div>
         )
     }
