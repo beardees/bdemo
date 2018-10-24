@@ -4,7 +4,7 @@ import { store, UserId } from '../store'
 type P = { uid: UserId }
 type S = { photoUrl: string }
 
-export class BeardForm extends React.Component<P, S> {
+export class addressForm extends React.Component<P, S> {
     render() {
         return (
             <div>
@@ -18,9 +18,9 @@ export class BeardForm extends React.Component<P, S> {
                 </label>
                 <button
                     onClick={() =>
-                        store.createBeard({
+                        store.createAddress({
                             id: String(Math.random()),
-                            url: this.state.photoUrl,
+                            url: this.state.addressurl,
                             userId: this.props.uid,
                             likes: []
                         })

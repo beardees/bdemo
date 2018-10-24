@@ -31,7 +31,9 @@ class App extends React.Component {
                         My profile
                     </button>
                     <button onClick={() => store.goToPage({ name: 'feed' })}>Feed</button>
-                    <button onClick={() => store.goToPage({ name: 'map' })}>Map</button>
+                    <button onClick={() => store.goToPage({ name: 'shops' })}>
+                        Shops
+                    </button>
                 </div>
             </div>
         )
