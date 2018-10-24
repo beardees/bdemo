@@ -6,7 +6,8 @@ import { store } from './store'
 
 import { Feed } from './pages/feed'
 import { MyProfile } from './pages/myProfile'
-import { Profile } from './pages/Profile'
+import { Profile } from './pages/profile'
+import { Shops } from './pages/shops'
 
 @observer
 class App extends React.Component {
@@ -19,6 +20,8 @@ class App extends React.Component {
             pageContent = <Feed />
         } else if (page.name === 'profile') {
             pageContent = <Profile userId={page.userId} />
+        } else if (page.name === 'shops') {
+            pageContent = <Shops />
         }
 
         return (

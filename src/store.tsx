@@ -17,16 +17,19 @@ export type User = {
 }
 
 export type AddressId = string
+type Lat = number
+type Lon = number
 export type Address = {
     id: AddressId
     owner: UserId
+    pos: [Lat, Lon]
 }
 
 type Page =
     | { name: 'profile'; userId: UserId } // login quand pas connecté, profile auqnd conencté
     | { name: 'myProfile' } // login quand pas connecté, profile auqnd conencté
     | { name: 'feed' } // liste des photos
-    | { name: 'map' } //
+    | { name: 'shops' } //
 
 export class Store {
     @observable
@@ -66,6 +69,11 @@ export class Store {
             id: 'paul',
             name: 'Paul',
             photoId: 'paul_photo1'
+        })
+        this.addresses.set('test1', {
+            owner: 'paul',
+            id: 'test1',
+            pos: [48.9, 2.3]
         })
         this.users.set('michou', {
             id: 'michou',

@@ -1,20 +1,24 @@
 {
-  "name": "bdemo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "mobx": "^5.5.0",
-    "mobx-react": "^5.3.1",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2"
-  },
-  "devDependencies": {
-    "@types/react": "^16.4.17",
-    "@types/react-dom": "^16.0.9",
-    "typescript": "^3.1.3"
-  }
+    "name": "bdemo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {},
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "leaflet": "^1.3.4",
+        "mobx": "^5.5.0",
+        "mobx-react": "^5.3.1",
+        "react": "^16.5.2",
+        "react-dom": "^16.5.2",
+        "react-leaflet": "^2.1.1"
+    },
+    "devDependencies": {
+        "@types/leaflet": "^1.2.11",
+        "@types/react": "^16.4.17",
+        "@types/react-dom": "^16.0.9",
+        "@types/react-leaflet": "^1.1.6",
+        "typescript": "^3.1.3"
+    }
 }

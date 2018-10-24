@@ -2,7 +2,7 @@ import * as React from 'react'
 import { observer } from 'mobx-react'
 import { store } from '../store'
 import { LoginWidget } from './loginWidget'
-import { Profile } from './Profile'
+import { Profile } from './profile'
 import { BeardForm } from './beardForm'
 
 @observer
@@ -12,7 +12,7 @@ export class MyProfile extends React.Component {
         //pas connecté
         if (uid == null) {
             return (
-                <div>
+                <div className="loginPage">
                     please login
                     <LoginWidget />
                 </div>
