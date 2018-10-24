@@ -29,6 +29,7 @@ type Page =
     | { name: 'profile'; userId: UserId } // login quand pas connecté, profile auqnd conencté
     | { name: 'myProfile' } // login quand pas connecté, profile auqnd conencté
     | { name: 'feed' } // liste des photos
+    | { name: 'addShop' } //
     | { name: 'shops' } //
 
 export class Store {

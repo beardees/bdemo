@@ -8,6 +8,7 @@ import { Feed } from './pages/feed'
 import { MyProfile } from './pages/myProfile'
 import { Profile } from './pages/profile'
 import { Shops } from './pages/shops'
+import { ShopList } from './pages/shopList'
 
 @observer
 class App extends React.Component {
@@ -21,6 +22,8 @@ class App extends React.Component {
         } else if (page.name === 'profile') {
             pageContent = <Profile userId={page.userId} />
         } else if (page.name === 'shops') {
+            pageContent = <ShopList />
+        } else if (page.name === 'addShop') {
             pageContent = <Shops />
         }
 
@@ -30,12 +33,29 @@ class App extends React.Component {
                     <div className="contentWrapper">{pageContent}</div>
                 </div>
                 <div className="menuPane">
-                    <button onClick={() => store.goToPage({ name: 'myProfile' })}>
+                    <button
+                        className={store.page.name === 'myProfile' ? 'active' : ''}
+                        onClick={() => store.goToPage({ name: 'myProfile' })}
+                    >
                         My profile
                     </button>
-                    <button onClick={() => store.goToPage({ name: 'feed' })}>Feed</button>
-                    <button onClick={() => store.goToPage({ name: 'shops' })}>
+                    <button
+                        className={store.page.name === 'feed' ? 'active' : ''}
+                        onClick={() => store.goToPage({ name: 'feed' })}
+                    >
+                        Feed
+                    </button>
+                    <button
+                        className={store.page.name === 'shops' ? 'active' : ''}
+                        onClick={() => store.goToPage({ name: 'shops' })}
+                    >
                         Shops
+                    </button>{' '}
+                    <button
+                        className={store.page.name === 'addShop' ? 'active' : ''}
+                        onClick={() => store.goToPage({ name: 'addShop' })}
+                    >
+                        Add Shop
                     </button>
                 </div>
             </div>
